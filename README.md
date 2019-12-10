@@ -17,7 +17,18 @@ $ curl https://swapi.co/api/people/1/
 your fetch function can get a dictionary version of this json. Check out the website to see what info you can get. The current html is set up for a queery of people. https://swapi.co/
 
 2. change the ```name.innerHTML``` to a different name to see that JS can modify the html
-3. Use fetch to queery the api and set those elements to the data you receive
+3. Use fetch to query the api and set those elements to the data you receive
+```
+fetch('https://swapi.co/api/people/1/')
+  .then((response) => {
+    if (!response.ok) throw Error(response.statusText);
+    return response.json();
+  })
+  .then((data) => {
+    // FIXME: set your variables here!
+  })
+  .catch(error => console.log(error));
+```
 4. Add two more things to display in the html and Javascript
 ```
 <--!index.html-->
